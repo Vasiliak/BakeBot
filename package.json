@@ -1,0 +1,27 @@
+{
+  "name": "bakebot",
+  "version": "1.0.0",
+  "description": "A discord bot that will do stuff and things",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vasiliak/BakeBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vasiliak/BakeBot/issues"
+  },
+  "homepage": "https://github.com/Vasiliak/BakeBot#readme",
+  "dependencies": {
+    "discord.js": "^14.5.0",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
