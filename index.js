@@ -25,11 +25,13 @@ client.on('interactionCreate', async interaction => {
 	} else if (commandName === 'user') {
 		await interaction.reply(`Your tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}`);
 	} else if (commandName === 'randomcat') {
-		await interaction.reply(`CURRENTLY IN PROGRESS`);
+		var fs = require('fs');
+		var files = fs.readdirSync('all_cats')
+		/* now files is an Array of the name of the files in the folder and you can pick a random name inside of that array */
+		let chosenFile = files[Math.floor(Math.random() * files.length)]
+		await interaction.followUp({files: [chosenFile]});
 	} else if (commandName === 'games') {
-			
-		
-		
+		await interaction.reply('Pong!');
 	} else if (commandName === 'platforms'){
 		await interaction.reply(`Connected Platforms Are: ${interaction.user.accounts}`);
 	}

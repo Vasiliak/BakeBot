@@ -2,10 +2,12 @@ const { REST, SlashCommandBuilder, Routes } = require('discord.js');
 const { clientId, guildId, token } = require('./config.json');
 
 const commands = [
+	//info
 	new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!'),
 	new SlashCommandBuilder().setName('server').setDescription('Replies with server info!'),
 	new SlashCommandBuilder().setName('user').setDescription('Replies with user info!'),
-	new SlashCommandBuilder().setName('randomcat').setDescription('Replies with a random picture of a cat!'),
+
+	//achievements
 	new SlashCommandBuilder().setName('achievements').setDescription('Replies with something having to do with an achievement'),
 	new SlashCommandBuilder().setName('platforms').setDescription('replies with a list of connected accounts'),
 	new SlashCommandBuilder()
@@ -18,7 +20,10 @@ const commands = [
 			.addSubcommand (subcommand => subcommand
 				.setName('platform')
 				.setDescription('asks user for the platform they want to make the comparison yet')
-				.addUserOption(option => option.setName('platform').setDescription('game on said platform')))
+				.addUserOption(option => option.setName('platform').setDescription('game on said platform'))),
+
+	//fun
+	new SlashCommandBuilder().setName('randomcat').setDescription('Replies with a random picture of a cat!')
 	]
 
 	.map(command => command.toJSON());
