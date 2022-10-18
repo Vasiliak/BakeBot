@@ -1,4 +1,4 @@
-const { REST, SlashCommandBuilder, Routes } = require('discord.js');
+const { REST, SlashCommandBuilder, Routes, SlashCommandSubcommandBuilder } = require('discord.js');
 const { clientId, guildId, token } = require('./config.json');
 
 const commands = [
@@ -9,7 +9,16 @@ const commands = [
 
 	//achievements
 	new SlashCommandBuilder().setName('achievements').setDescription('Replies with something having to do with an achievement'),
-	new SlashCommandBuilder().setName('platforms').setDescription('replies with a list of connected accounts'),
+	//platforms
+	
+	new SlashCommandBuilder()
+		.setName('platforms')
+		.setDescription('replies with a list of connected accounts')
+		.addSubcommand(subcommand => subcommand
+			.setName('user')
+			.setDescription('asks for a user to see the connected platforms')
+		),
+	
 	new SlashCommandBuilder()
 		.setName('games')
 		.setDescription('Replies with a list of shared games between two users')

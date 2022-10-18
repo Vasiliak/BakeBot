@@ -33,7 +33,7 @@ client.on('interactionCreate', async interaction => {
 	} else if (commandName === 'games') {
 		await interaction.reply('Pong!');
 	} else if (commandName === 'platforms'){
-		await interaction.reply(`Connected Platforms Are: ${interaction.user.accounts}`);
+		await interaction.reply(`Connected Platforms Are: ${interaction.user.services}`);
 	}
 
 });
