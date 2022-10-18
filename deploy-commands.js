@@ -17,6 +17,7 @@ const commands = [
 		.addSubcommand(subcommand => subcommand
 			.setName('user')
 			.setDescription('asks for a user to see the connected platforms')
+			.addUserOption(option => option.setName('target').setDescription('name of the user'))
 		),
 	
 	new SlashCommandBuilder()

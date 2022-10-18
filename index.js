@@ -13,6 +13,17 @@ client.once('ready', () => {
 // Login to Discord with your client's token
 client.login(token);
 
+const express = require('express');
+const { port } = require('./config.json');
+
+const app = express();
+
+app.get('/', (request, response) => {
+	return response.sendFile('index.html', { root: '.' });
+});
+
+app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
+
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
@@ -33,7 +44,7 @@ client.on('interactionCreate', async interaction => {
 	} else if (commandName === 'games') {
 		await interaction.reply('Pong!');
 	} else if (commandName === 'platforms'){
-		await interaction.reply(`Connected Platforms Are: ${interaction.user.services}`);
+		await interaction.reply(`Connected Platforms Are: ${interaction.user.connections}`);
 	}
 
 });
