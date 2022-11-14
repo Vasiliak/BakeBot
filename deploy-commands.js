@@ -9,8 +9,8 @@ const commands = [
 
 	//achievements
 	new SlashCommandBuilder().setName('achievements').setDescription('Replies with something having to do with an achievement'),
-	//platforms
 	
+	//platforms
 	new SlashCommandBuilder()
 		.setName('platforms')
 		.setDescription('replies with a list of connected accounts')
